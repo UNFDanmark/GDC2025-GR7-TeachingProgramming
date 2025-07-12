@@ -95,7 +95,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3842129486670733192}
-  - component: {fileID: 2195641925564165433}
   - component: {fileID: 7882127756422318809}
   m_Layer: 7
   m_Name: Shooting Point
@@ -119,38 +118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8557908409725776877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2195641925564165433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4289928797459786711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc65bfe41cd57b74794d7bf3adb96b5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 2389537475574905628, guid: 30183e464d14fd94c8ac1f2625c5501b, type: 3}
-  bulletSpeed: 5
-  shoot:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5d9b2544-36bc-4725-9e09-c6e4ae80b197
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 17747555-5b5b-462d-89d7-1ace93d456f3
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Shoot
-      m_Flags: 0
-    m_Flags: 0
-  cooldown: 0.25
 --- !u!114 &7882127756422318809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +263,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightDistance: 5.06
+  bullet: {fileID: 2389537475574905628, guid: 30183e464d14fd94c8ac1f2625c5501b, type: 3}
+  bulletSpeed: 5
+  cooldown: 0.5
+  shootingPoint: {fileID: 4289928797459786711}
 --- !u!1 &7436969391698310991
 GameObject:
   m_ObjectHideFlags: 0
