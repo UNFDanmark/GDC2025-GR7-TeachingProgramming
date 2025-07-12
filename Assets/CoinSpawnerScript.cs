@@ -23,8 +23,8 @@ public class CoinSpawnerScript : MonoBehaviour
         if (currentSpawnTime <= 0)
         {
             Vector3 spawnPosition = transform.position;
-            spawnPosition.x += Random.Range(-5, 5);
-            spawnPosition.z += Random.Range(-5, 5);
+            spawnPosition.x += Random.Range(-20, 20);
+            spawnPosition.z += Random.Range(-20, 20);
             spawnPosition.y += 1;
             
             Instantiate(coin, spawnPosition, coin.transform.rotation);

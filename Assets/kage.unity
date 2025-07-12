@@ -401,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 545759993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36342, y: 0.70732, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.8184, y: 4.8184, z: 4.8184}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 5484302468808235523, guid: 217cd0bff7e81aa499d90384addd963f, type: 3}
-  spawnCooldown: 5
+  spawnCooldown: 0.1
 --- !u!4 &971472136
 Transform:
   m_ObjectHideFlags: 0
@@ -959,7 +959,7 @@ Transform:
   m_GameObject: {fileID: 971472134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68055, y: 0.70732, z: 0.27115}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
