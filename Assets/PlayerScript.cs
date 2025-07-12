@@ -25,15 +25,15 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         int jegVirkerKunIUpdate = 8;
-        print(health + jegVirkerKunIUpdate);
+        //print(health + jegVirkerKunIUpdate);
 
         if(speed > 18)
         {
-            print("Du er hurtig");
+            //print("Du er hurtig");
         }
         else
         {
-            print("Du er ikke så hurtig");
+            //print("Du er ikke så hurtig");
         }
 
         Vector2 moveInput = moveAction.ReadValue<Vector2>();

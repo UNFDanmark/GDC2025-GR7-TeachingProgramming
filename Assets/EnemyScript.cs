@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         agent.SetDestination(playerTarget.transform.position);
-        print(agent.destination);
+        //print(agent.destination);
     }
 
 
