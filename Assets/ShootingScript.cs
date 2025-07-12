@@ -6,7 +6,8 @@ public class ShootingScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public GameObject bullet;
-
+    public float bulletSpeed = 5f;
+    
     public InputAction shoot;
 
     public float cooldown = 0.5f;
@@ -25,7 +26,12 @@ public class ShootingScript : MonoBehaviour
         
         if (shoot.WasPressedThisFrame() && cooldownLeft <= 0)
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject bulletClone = Instantiate(bullet, transform.position, Quaternion.identity);
+            Rigidbody bulletrb = bulletClone.GetComponent<Rigidbody>();
+            bulletrb.linearVelocity = transform.forward * bulletSpeed;
+            
+            
+            
             cooldownLeft = cooldown;
 
             
