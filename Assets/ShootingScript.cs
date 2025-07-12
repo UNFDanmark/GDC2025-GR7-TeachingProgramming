@@ -28,13 +28,7 @@ public class ShootingScript : MonoBehaviour
             Instantiate(bullet, transform.position, Quaternion.identity);
             cooldownLeft = cooldown;
 
-            float destroyTimer = 0.0f;
-            destroyTimer += Time.deltaTime;
-
-            if (destroyTimer > 10.0)
-            {
-                GameObject.Destroy(bullet);
-            }
+            
         }
     }
 }
