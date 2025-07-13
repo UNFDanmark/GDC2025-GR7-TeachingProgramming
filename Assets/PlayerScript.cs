@@ -1,24 +1,32 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public int health = 10;
+    public int health = 3;
     Rigidbody rb;
     public float speed = 10;
 
     public Animator Animator;
 
     public InputAction moveAction;
+
+    public GameObject gameOverScreen;
+
+    public InputAction restartAction;
+
+    public  TextMeshProUGUI TextMeshProUGUI;
     
     void Start()
     {
         moveAction.Enable();
-        
-        int jegVirkerKunIStart = 10;
-        print(health + jegVirkerKunIStart);
+
+        restartAction.Enable();
         
         rb = GetComponent<Rigidbody>();
     }
@@ -49,5 +57,25 @@ public class PlayerScript : MonoBehaviour
         
         Animator.SetFloat("Speed", rb.linearVelocity.magnitude);
 
+        if (restartAction.WasPressedThisFrame())
+        {
+            SceneManager.LoadScene("kage");
+        }
+
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            health -= 1;
+            
+            TextMeshProUGUI.SetText("Health: " + health + "/3");
+        }
+
+        if (health <= 0)
+        {
+            gameOverScreen.SetActive(true);
+        }
     }
 }
