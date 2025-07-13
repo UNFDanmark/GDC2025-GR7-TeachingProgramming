@@ -10,11 +10,16 @@ public class ShootingScript : MonoBehaviour
     
     public InputAction shoot;
 
+    AudioSource audioSource;
+    
     public float cooldown = 0.5f;
     float cooldownLeft;
+
+    public Animator Animator;
     
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         shoot.Enable();
     }
 
@@ -29,11 +34,14 @@ public class ShootingScript : MonoBehaviour
             GameObject bulletClone = Instantiate(bullet, transform.position, Quaternion.identity);
             Rigidbody bulletrb = bulletClone.GetComponent<Rigidbody>();
             bulletrb.linearVelocity = transform.forward * bulletSpeed;
+
+            audioSource.Play();
+            audioSource.pitch = Random.Range(0.5f, 1.5f);
             
             
             
             cooldownLeft = cooldown;
-
+            Animator.SetTrigger("Shoot");
             
         }
     }

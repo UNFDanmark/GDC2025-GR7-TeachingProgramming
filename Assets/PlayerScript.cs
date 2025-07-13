@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
     Rigidbody rb;
     public float speed = 10;
 
+    public Animator Animator;
+
     public InputAction moveAction;
     
     void Start()
@@ -44,6 +46,8 @@ public class PlayerScript : MonoBehaviour
         newVelocity.z = moveInput.y * speed;
 
         rb.linearVelocity = newVelocity;
+        
+        Animator.SetFloat("Speed", rb.linearVelocity.magnitude);
 
     }
 }

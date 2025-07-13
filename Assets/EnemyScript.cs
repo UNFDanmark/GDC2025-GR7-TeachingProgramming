@@ -6,6 +6,9 @@ public class EnemyScript : MonoBehaviour
 {
     public NavMeshAgent agent;
     GameObject playerTarget;
+
+    public Animator Animator;
+    
     
     
     
@@ -21,7 +24,9 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         agent.SetDestination(playerTarget.transform.position);
-        //print(agent.destination);
+        
+        Animator.SetFloat("Speed", agent.velocity.magnitude);
+        print("speed is " + agent.velocity.magnitude);
     }
 
 
